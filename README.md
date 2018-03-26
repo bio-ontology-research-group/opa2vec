@@ -4,7 +4,7 @@ OPA2Vec is a tool that can be used to produce feature vectors for biological ent
 This document provides instructions on how to run OPA2Vec as a tool and contains also a detailed documentation of the implementation of OPA2Vec for users willing to change the code according to their needs which is quite easy.
 ## Pre-requisites
 Onto2Vec implementation uses Groovy with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html), Python and Perl. No other programs are required to run it.
-## Running Opa2Vec
+## Running OPA2Vec
 - Create a new directory and name it OPA2Vec.
 - Download all PubMed abstracts (titles and abstracts only) in the OPA2Vec directory and name file  *pubmed_corpus.txt*
 - Download all the provided files from this repository to the Opa2Vec directory.
