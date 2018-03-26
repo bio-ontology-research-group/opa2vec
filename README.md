@@ -49,7 +49,7 @@ Given the annotation file *pathtoAssociationFile* provided by the user. OPA2Vec 
 
 ### Corpus Creation
 OPA2Vec combines all obtained ontology axioms, metadata annotation axioms, and entity-concept association data into one main corpus *ontology_corpus.lst*.
-## Representation Learning 
+### Representation Learning 
 To produce vector representations of the entities, OPA2Vec pre-trains Word2Vec on the PubMed corpus *pubmed_corpus.txt* and then applies the pre-trained model on the previously obtained coprus *ontology_corpus.lst* to produce vector representations for the entities specified in the file *listofEntities*. These two operations are performed through the script *runWord2Vec.py*, which could be run in the terminal as:
 ```
 python runWord2Vec.py listofEntities
