@@ -7,7 +7,7 @@ OPA2Vec implementation uses Groovy with Grape for dependency management (http://
 ## Running OPA2Vec
 - Create a new directory and name it OPA2Vec.
 - Download all PubMed abstracts (titles and abstracts only) in the OPA2Vec directory and name file  *pubmed_corpus.txt*
-- Download all the provided files from this repository to the Opa2Vec directory.
+- Download all the provided files from this repository to the OPA2Vec directory.
 - In the terminal, run 
 ```
 python runOPA2Vec.py pathToOntology.owl pathtoAssociationFile listofEntities
