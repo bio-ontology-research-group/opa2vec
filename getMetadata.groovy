@@ -163,7 +163,7 @@ Set<OWLClass> classes = MyOntology.getClassesInSignature();
 			    	// RDFS-labels
 					myproperty=prop.toString();
 			    		//if (myproperty.equals("rdfs:label")) {
-					if (myproperty.contains("IAO_0000115")|| myproperty.equals("rdfs:label") ){
+					if (myproperty.contains("IAO_0000115")|| myproperty.equals("rdfs:label")||myproperty.contains("Synonym")||myproperty.contains("created_by") ){
 							 class11=rend.render(cls);
 							 out.println((class11+ " "+ myproperty+" " + ((OWLLiteral) val).getLiteral()));
 
