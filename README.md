@@ -6,7 +6,7 @@ This document provides instructions on how to run OPA2Vec as a tool and contains
 OPA2Vec implementation uses Groovy with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html), Python and Perl. No other programs are required to run it.
 ## Running OPA2Vec
 - Create a new directory and name it OPA2Vec.
-- Download all PubMed abstracts (titles and abstracts only) in the OPA2Vec directory and name file  *pubmed_corpus.txt*
+- Download all PubMed abstracts (titles and abstracts only) from https://www.ncbi.nlm.nih.gov/pubmed/ to the OPA2Vec directory and name file  *pubmed_corpus.txt*
 - Download all the provided files from this repository to the OPA2Vec directory.
 - In the terminal, run 
 ```
