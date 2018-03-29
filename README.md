@@ -4,21 +4,6 @@ OPA2Vec is a tool that can be used to produce feature vectors for biological ent
 This document provides instructions on how to run OPA2Vec as a tool and contains also a detailed documentation of the implementation of OPA2Vec for users willing to change the code according to their needs which is quite easy.
 ## Pre-requisites
 OPA2Vec implementation uses Groovy with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html), Python and Perl. No other programs are required to run it.
-## Running OPA2Vec
-- Create a new directory and name it OPA2Vec.
-- Download all PubMed abstracts (titles and abstracts only) from https://www.ncbi.nlm.nih.gov/pubmed/ to the OPA2Vec directory and name file  *pubmed_corpus.txt*
-- Download all the provided files from this repository to the OPA2Vec directory.
-- In the terminal, run 
-```
-python runOPA2Vec.py pathToOntology.owl pathtoAssociationFile listofEntities
-```
-where:
-- *pathtoOntology.owl* is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology)
-- *pathtoAssociationFile* is the path to the file containing the entity-concept associations (e.g. disease phenotype associations). If more than one association file is needed, concatenate them into one file.
-- *listofEntities* is the file containing the list of biological entities for which you would like to get the feature vectors (each entity in a separate line).
-
-The script should create a file *AllVectorResults.lst* that contains vector representations for all classes specified in the *listofEntities* file.
-The details of the implementation are available below.
 ## Details of the implementation
 ### Ontology Processing
 The first step of OPA2Vec is to process the ontology using OWL API and infer new axioms using a reasoner. 
@@ -55,6 +40,19 @@ To produce vector representations of the entities, OPA2Vec pre-trains Word2Vec o
 python runWord2Vec.py listofEntities
 ```
   This script will create an output file *AllVectorResults.lst*  with the vector representations of all entities specified in *listofEntities*.
+## Running OPA2Vec
+- Create a new directory and name it OPA2Vec.
+- Download all PubMed abstracts (titles and abstracts only) from https://www.ncbi.nlm.nih.gov/pubmed/ to the OPA2Vec directory and name file  *pubmed_corpus.txt*
+- Download all the provided files from this repository to the OPA2Vec directory.
+- In the terminal, run 
+```
+python runOPA2Vec.py pathToOntology.owl pathtoAssociationFile listofEntities
+```
+where:
+- *pathtoOntology.owl* is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology)
+- *pathtoAssociationFile* is the path to the file containing the entity-concept associations (e.g. disease phenotype associations). If more than one association file is needed, concatenate them into one file.
+- *listofEntities* is the file containing the list of biological entities for which you would like to get the feature vectors (each entity in a separate line).
 
+The script should create a file *AllVectorResults.lst* that contains vector representations for all classes specified in the *listofEntities* file.
 ## Final notes
 For any comments or help needed with how to run OPA2Vec, please send an email to: fzohrasmaili@gmail.com
