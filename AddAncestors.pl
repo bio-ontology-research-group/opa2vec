@@ -16,7 +16,7 @@ open (FH,"$annotfile");
 while (my $line =<FH>)
 {
 	chomp ($line);
-	$line =~ s/:/_/g;
+	#$line =~ s/:/_/g;
 	push @temparray, $line;
 	open (FILE2, "$ontoclassesfile");
 	while (my $secline=<FILE2>)
