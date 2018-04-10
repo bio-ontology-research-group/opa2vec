@@ -26,18 +26,18 @@ where the following are mandatory arguments:
 
 You can also specify the following optional arguments:
 
-   -h, --help              show this help message and exit
-  
-   **-embedsize [embedding size]**  
-                        Size of obtaibed vectors
-                        
-   **-windsize [window size]**  
-                        Window size for word2vec model
-                        
-   **-mincount [min count]**  
-                        Minimum count value for word2vec model
-                        
-  **-model [model]**          Preferred word2vec architecture, sg or cbow
+           -h, --help              show this help message and exit
+
+           **-embedsize [embedding size]**  
+                                Size of obtaibed vectors
+
+           **-windsize [window size]**  
+                                Window size for word2vec model
+
+           **-mincount [min count]**  
+                                Minimum count value for word2vec model
+
+          **-model [model]**          Preferred word2vec architecture, sg or cbow
   
 Im nore detail:
 - "ontology file" is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology)
