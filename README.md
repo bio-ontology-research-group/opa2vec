@@ -15,11 +15,11 @@ python runOPA2Vec.py "ontology file" "association file" "entities file"
 ```
 where the following are mandatory arguments:
 
-  **ontology file**          File containing ontology in owl format
+ - **ontology file**            File containing ontology in owl format
   
-  **association file**       File containing entity class associations
+ - **association file**         File containing entity class associations
   
-  **enities file**           File containing list of of biological entities for
+ - **enities file**            File containing list of of biological entities for
                         which you would like to get the feature vectors (each
                         entity in a separate line)
                         
