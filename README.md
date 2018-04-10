@@ -15,15 +15,17 @@ python runOPA2Vec.py pathToOntology.owl pathtoAssociationFile listofEntities
 where:
 - *pathtoOntology.owl* is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology)
 - *pathtoAssociationFile* is the path to the file containing the entity-concept associations (e.g. disease phenotype associations). If more than one association file is needed, concatenate them into one file.
+    + Please make sure that the classes have the same format as they do in the ontlogy (e.g. GO:0006810 should be GO_0006810 as it appears in the gene ontology ).
+    + For better results reproducibility, it would be ideal to have the association file containing only the entity and the class it is annotated with separated by one space as shown in the file *SampleAssociationFile.lst*. However, any other format should also work as long the class and entity appear in the same line.
 - *listofEntities* is the file containing the list of biological entities for which you would like to get the feature vectors (each entity in a separate line).
 
-The script should create a file *AllVectorResults.lst* that contains vector representations for all classes specified in the *listofEntities* file.
+The script should create a file *AllVectorResults.lst* that contains vector representations for all classes specified in the *listofEntities* file. An example of what *AllVectorResults.lst* should look like is shown in *SampleVectors.lst*.
 ## Details of the implementation
 ### Ontology Processing
 The first step of OPA2Vec is to process the ontology using OWL API and infer new axioms using a reasoner. 
 - The file *ProcessOntology.groovy* processes the ontology and runs the reasoner to infer the deductive closure of said ontology. It also displays all axioms provided in the ontology. You can run it as:
     ```
-    groovy OntoProcess.groovy pathToOntology.owl
+    groovy ProcessOntology.groovy pathToOntology.owl
     ```
  
  where *pathtoOntology.owl* is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology).The script should create two files in your directory: *classes.lst*  which contains the set of classes in the ontology, and  *axioms.lst*  which contains all axioms from the ontology including the inferred ones.These files are used by the code later on.
