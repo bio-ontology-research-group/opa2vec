@@ -14,8 +14,6 @@ mymodel.build_vocab(sentences, update=True)
 #mymodel =gensim.models.Word2Vec(sentences,sg=0,min_count=0, size=200 ,window=5, sample=1e-3)
 mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.iter)
 #print (len(mymodel.wv.vocab));
-#print ("Although"+' '+str(mymodel["Although"])+'\n')
-#print ("OMIM:101000"+' '+str(mymodel["OMIM:101000"])+'\n')
 # Store vectors for each given class
 word_vectors=mymodel.wv
 file= open ('AllVectorResults.lst', 'w')
