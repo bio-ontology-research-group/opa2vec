@@ -84,7 +84,7 @@ python runWord2Vec.py "entities file"
 ```
   This script will create an output file *AllVectorResults.lst*  with the vector representations of all entities specified in *entities file*.
 ## Additional notes
-
+The data directory contains samle files for axioms, metadata, classes, class-entity associations, etc.
 ## Related work
 Please refer to the following  for related work:
 - Smaili, F. Z. et al. (2018). Onto2vec: joint vector-based representation of
