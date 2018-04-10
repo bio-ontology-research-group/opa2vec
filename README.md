@@ -29,7 +29,7 @@ You can also specify the following optional arguments:
  -  -h, --help              show this help message and exit
 
  -  **-embedsize [embedding size]**  
-                                Size of obtaibed vectors
+                                Size of obtained vectors
 
  - **-windsize [window size]**  
                                 Window size for word2vec model
