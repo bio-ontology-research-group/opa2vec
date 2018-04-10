@@ -15,20 +15,29 @@ python runOPA2Vec.py "ontology file" "association file" "entities file"
 ```
 where the following are mandatory arguments:
   ontology file         File containing ontology in owl format
+  
   association file      File containing entity class associations
+  
   enities file          File containing list of of biological entities for
                         which you would like to get the feature vectors (each
                         entity in a separate line)
+                        
 
 You can also specify the following optional arguments:
+
   -h, --help            show this help message and exit
+  
   -embedsize [embedding size]
                         Size of obtaibed vectors
+                        
   -windsize [window size]
                         Window size for word2vec model
+                        
   -mincount [min count]
                         Minimum count value for word2vec model
+                        
   -model [model]        Preferred word2vec architecture, sg or cbow
+  
 Im nore detail:
 - "ontology file" is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology)
 - "association file" is the path to the file containing the entity-concept associations (e.g. disease phenotype associations).  
