@@ -11,7 +11,7 @@ OPA2Vec implementation uses Groovy with Grape for dependency management (http://
 - Download all the provided files from this repository to the OPA2Vec directory.
 - In the terminal, run 
 ```
-python runOPA2Vec.py "ontology file" "association file" "entities file"
+python runOPA2Vec.py "ontology file" "association file" "entities file" -embedsize N -windsize N -mincount N -model sg/cbow
 ```
 where the following are mandatory arguments:
 
