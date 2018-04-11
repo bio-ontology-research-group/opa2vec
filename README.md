@@ -38,7 +38,7 @@ You can also specify the following optional arguments:
                                 Minimum count value for word2vec model
   - **-model [model]**          Preferred word2vec architecture, sg or cbow
   
-In nore detail:
+In more detail:
 - "ontology file" is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology)
 - "association file" is the path to the file containing the entity-concept associations (e.g. disease phenotype associations).  
     + If more than one association file is needed, concatenate them into one file.
