@@ -40,7 +40,7 @@ while (my $line =<FH>)
 						$line =~ s/$childterm/$Ancesterm/g;				
 						#my$newline= "$prot hasFunction $goAnces\n";
 						push @temparray, $line;
-						print ("Found two \n");
+						#print ("Found two \n");
 					}
 				}
 			}
