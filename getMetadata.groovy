@@ -131,8 +131,8 @@ OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 String ontostring = args[0];
 //println ("Here: "+args[0]);
 //OWLOntology ont = manager.loadOntologyFromOntologyDocument(new File("/home/smailif/Documents/Onto_FollowUp/PhenomeNet/phenomenet.owl"))
-OWLOntology ont = manager.loadOntologyFromOntologyDocument(new File(ontostring));
-OWLOntology MyOntology =manager.loadOntologyFromOntologyDocument (iri);
+OWLOntology MyOntology = manager.loadOntologyFromOntologyDocument(new File(ontostring));
+//OWLOntology MyOntology =manager.loadOntologyFromOntologyDocument (iri);
 OWLObjectRenderer rend =new ManchesterOWLSyntaxOWLObjectRendererImpl ();
 //OWLOntology GOOntology =manager.loadOntologyFromOntologyDocument (iri);
 //Set<OWLClass> classes2=GOOntology.getClassesInSignature();
