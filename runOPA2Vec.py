@@ -52,6 +52,8 @@ print "Ontology Processing ...\n"
 commandF ="groovy ProcessOntology.groovy " + str(ontology_file)
 os.system(commandF)
 print "Ontology Processing Complete ...\n"
+commandMerge ="cat axiomorig.lst axiomsinf.lst > axioms.lst"
+os.system(commandMerge)
 print "Metadata Extraction ...\n"
 commandS ="groovy getMetadata.groovy "+ str(ontology_file)
 os.system(commandS)
