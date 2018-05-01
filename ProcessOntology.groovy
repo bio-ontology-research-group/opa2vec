@@ -63,13 +63,13 @@ InferredOntologyGenerator iog = new InferredOntologyGenerator(reasoner,gens);
 iog.fillOntology(outputManager.getOWLDataFactory(), infOnt);
 
 // Save the inferred ontology.
-outputManager.saveOntology(infOnt,IRI.create((new File("inferredontology.owl").toURI())));
+outputManager.saveOntology(infOnt,IRI.create((new File("inferredontologygo.owl").toURI())));
 
 // Display Axioms
 	OWLObjectRenderer renderer =new ManchesterOWLSyntaxOWLObjectRendererImpl ();
 	int numaxiom1= infOnt.getAxiomCount();
 	Set<OWLClass> classes=infOnt.getClassesInSignature();
-	FileWriter fw= new FileWriter ("axioms.lst",true); BufferedWriter bw =new BufferedWriter (fw); PrintWriter out =new PrintWriter (bw);
+	FileWriter fw= new FileWriter ("axiomsinf.lst",true); BufferedWriter bw =new BufferedWriter (fw); PrintWriter out =new PrintWriter (bw);
 	FileWriter fw1= new FileWriter ("classes.lst",true); BufferedWriter bw1 =new BufferedWriter (fw1); PrintWriter out1 =new PrintWriter (bw1);
 	for (OWLClass class1 : classes)
 	{
@@ -80,6 +80,23 @@ outputManager.saveOntology(infOnt,IRI.create((new File("inferredontology.owl").t
 	    	 classaxiom=renderer.render (claxiom);
 	    	out1.println (classess);
 	    	out.println (classaxiom);
+	    }
+	}
+
+//display original axioms
+	//int numaxiom1= Ont.getAxiomCount();
+	Set<OWLClass> classeso=ont.getClassesInSignature();
+	FileWriter fwo= new FileWriter ("axiomsorig.lst",true); BufferedWriter bwo =new BufferedWriter (fwo); PrintWriter outo =new PrintWriter (bwo);
+	//FileWriter fw1= new FileWriter ("classesgo.lst",true); BufferedWriter bw1 =new BufferedWriter (fw1); PrintWriter out1 =new PrintWriter (bw1);
+	for (OWLClass classo : classeso)
+	{
+	   Set<OWLClassAxiom> ontoaxioms=ont.getAxioms (classo);
+	   for (OWLClassAxiom claxiom: ontoaxioms)
+	   {
+	  	// classess=renderer.render(class1);
+	    	 classaxiom=renderer.render (claxiom);
+	    	//out1.println (classess);
+	    	outo.println (classaxiom);
 	    }
 	}
 
