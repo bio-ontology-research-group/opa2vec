@@ -1,31 +1,3 @@
-
-Skip to content
-
-    Features
-    Business
-    Explore
-    Marketplace
-    Pricing
-
-This repository
-Sign in or Sign up
-
-11
-0
-
-    0
-
-bio-ontology-research-group/opa2vec
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Insights
-opa2vec/AddAncestors.pl
-2af04d6 on Apr 12
-@fzohrasmaili fzohrasmaili Update AddAncestors.pl
-60 lines (54 sloc) 1.2 KB
-
 #!/usr/bin/perl
 #use strict;
 #Define all Needed Variables
