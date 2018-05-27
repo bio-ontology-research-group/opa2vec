@@ -24,7 +24,7 @@ parser.add_argument("-mincount", nargs = '?', metavar = "min count", type = int,
                      help = "Minimum count value for word2vec model")
 parser.add_argument("-model", nargs = '?', metavar = "model", type = str,default='sg',
                      help = "Preferred word2vec architecture, sg or cbow")
-parser.add_argument("-pretrained", nargs = '?', metvar ="pre-trained model", type =str, default ="RepresentationModel_pubmed.txt", help= "Pre-trained word2vec model for background knowledge")
+parser.add_argument("-pretrained", nargs = '?', metavar ="pre-trained model", type =str, default ="RepresentationModel_pubmed.txt", help= "Pre-trained word2vec model for background knowledge")
 parser.add_argument("-entities", nargs = '?', metavar = "entities file", type = str, default="finalclasses.lst",
                      help = "File containing list of of biological entities for which you would like to get the feature vectors (each entity in a separate line)")
 parser.add_argument("-annotations", nargs='?',metavar="metadata annotations", type = str, default="all", help = "List of full URIs of annotation properties to be included in metadata -separated by a comma ,- use 'all' for all annotation properties (default) or 'none' for no annotation property ")
