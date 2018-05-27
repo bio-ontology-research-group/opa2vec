@@ -63,7 +63,7 @@ os.system(commandF)
 print "Ontology Processing Complete ...\n"
 #Needed pre-processng ... just in case !
 commandExtra1="perl getclasses.pl"
-commandMerge ="cat axiomorig.lst axiomsinf.lst > axioms.lst"
+commandMerge ="cat axiomsorig.lst axiomsinf.lst > axioms.lst"
 os.system(commandMerge)
 print "Metadata Extraction ...\n"
 commandS ="groovy getMetadata.groovy "+ str(ontology_file)+" "+str(listofuri)
