@@ -54,7 +54,7 @@ listofuri=args.annotations
 
 
 
-if (model != 'sg' and model != 'cbow')
+if (model != 'sg' and model != 'cbow'):
 	model ='sg'
 print "OPA2Vec Running ...\n"
 print "Ontology Processing ...\n"
