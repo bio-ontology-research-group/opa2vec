@@ -47,7 +47,7 @@ In more detail:
     + The ontology classes in the association file should be represented with their full URIs, e.g: .
     +Ideally, the association file should contain two columns in each line: the entity (e.g. protein) and the full URI of the ontology class (e.g. GO function) it is annotated with separated by one space as shown in the file *SampleAssociationFile.lst*. 
 
-- **"-annotations"** is the optional parameter used to specify the list of the metada annotation properties (with their full URIs) you would like to use.E.g:http://purl.obolibrary.org/obo/IAO_0000115. You can also choose to use "all" annotation properties (default) or "none".
+- **"-annotations"** is the optional parameter used to specify the list of the metada annotation properties (with their full URIs) you would like to use.E.g:<http://purl.obolibrary.org/obo/IAO_0000115>. You can also choose to use "all" annotation properties (default) or "none".
 - **"-entities file"** is the optional file containing the list of biological entities for which you would like to get the feature vectors (each entity in a separate line). If no file is specified the program will output vectors for all enitities and classes in the corpus.
 - **"-pretrained"** is the optional name of the pre-trained word2vec model. You can pre-train word2vec using the corpus of your choice (Wikipedia, PubMed, ...) and use it to run OPA2Vec by providing it as input. By default, our program uses a model pre-trained on PubMed. If you choose to use the default model, please download it from  http://bio2vec.net/data/pubmed_model/, otherwise the program will raise an error. 
 ### Output
