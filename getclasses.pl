@@ -28,6 +28,6 @@ foreach (@array)
 }
 close (OUTF);
 
-`cat classes.lst annotclasses.lst > allclasses.lst`
+`cat classes.lst annotclasses.lst > allclasses.lst`;
 
-` uniq -u allclasses.lst > finalclasses.lst`
+` uniq -u allclasses.lst > finalclasses.lst`;
