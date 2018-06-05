@@ -28,6 +28,10 @@ foreach (@array)
 }
 close (OUTF);
 
+`touch allclasses.lst`;
+
+`touch finalclasses.lst`;
+
 `cat classes.lst annotclasses.lst > allclasses.lst`;
 
 ` uniq -u allclasses.lst > finalclasses.lst`;
