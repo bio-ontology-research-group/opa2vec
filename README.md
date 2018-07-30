@@ -37,7 +37,7 @@ You can also specify the following optional arguments:
   Preferred word2vec architecture, sg or cbow
  
   - **-pretrained [pre-trained model]**
-  Pre-trained word2vec model for background knowledge. If no pre-trained model is specified, the program will assume you have downloaded the default pre-trained model from http://bio2vec.net/data/pubmed_model/ (Please download all three files)
+  Pre-trained word2vec model for background knowledge. If no pre-trained model is specified, the program will assume you have downloaded the default pre-trained model from http://bio2vec.net/data/pubmed_model/ (Please download all three files). The PMC trained model is also available in the same directory.
  
   
 In more detail:
