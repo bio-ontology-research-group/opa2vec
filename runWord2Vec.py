@@ -20,7 +20,6 @@ pretrain=str (sys.argv[6])
 mymodel=gensim.models.Word2Vec.load (pretrain)
 sentences =gensim.models.word2vec.LineSentence('ontology_corpus.lst')
 mymodel.min_count = 0
-mymodel.size=mysize
 mymodel.build_vocab(sentences, update=True)
 #mymodel =gensim.models.Word2Vec(sentences,sg=0,min_count=0, size=200 ,window=5, sample=1e-3)
 mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.iter)
