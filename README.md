@@ -44,8 +44,7 @@ In more detail:
 - **"ontology file"** is the path to the file containing the ontology in owl format.(e.g. PhenomeNet onotology)
 - **"association file"** is the path to the file containing the entity-concept associations (e.g. disease-phenotype associations).  
     + If more than one association file is needed, concatenate them into one file.
-    + The ontology classes in the association file should be represented with their full URIs, e.g: .
-    +Ideally, the association file should contain two columns in each line: the entity (e.g. protein) and the full URI of the ontology class (e.g. GO function) it is annotated with separated by one space as shown in the file *SampleAssociationFile.lst*. 
+    + Ideally, the association file should contain two columns in each line: the entity (e.g. protein) and the full URI of the ontology class (e.g. GO function) it is annotated with separated by one space as shown in the file *SampleAssociationFile.lst*. 
 
 - **"-annotations"** is the optional parameter used to specify the list of the metada annotation properties (with their full URIs) you would like to use.E.g:<http://purl.obolibrary.org/obo/IAO_0000115>. You can also choose to use "all" annotation properties (default) or "none".
 - **"-entities file"** is the optional file containing the list of biological entities for which you would like to get the feature vectors (each entity in a separate line). If no file is specified the program will output vectors for all enitities and classes in the corpus.
