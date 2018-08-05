@@ -25,8 +25,6 @@ You can also specify the following optional arguments:
  -  **-annotations [metadata annotations]**
  List of full URIs of annotation properties to be included in metadata separated by a comma . Use 'all' for all annotation properties (default) or 'none' for no annotation property
 
- -  **-embedsize [embedding size]**  
-                                Size of obtained vectors
 
  - **-windsize [window size]**  
                                 Window size for word2vec model
@@ -37,7 +35,7 @@ You can also specify the following optional arguments:
   Preferred word2vec architecture, sg or cbow
  
   - **-pretrained [pre-trained model]**
-  Pre-trained word2vec model for background knowledge. If no pre-trained model is specified, the program will assume you have downloaded the default pre-trained model from http://bio2vec.net/data/pubmed_model/ (Please download all three files). The PMC trained model is also available in the same directory.
+  Pre-trained word2vec model for background knowledge. If no pre-trained model is specified, the program will assume you have downloaded the default pre-trained model from http://bio2vec.net/data/pubmed_model/ (Please download all three files). The PMC trained model is also available in the same directory. Many of the word2vec parameters including the vector size are pre-defined in the pre-trained model and could not be changed. The vector size provided in our pre-defined model is 200, but you can provide your own pre-trained model with the vector size that you prefer. 
  
   
 In more detail:
