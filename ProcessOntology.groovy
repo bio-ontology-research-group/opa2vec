@@ -65,8 +65,22 @@ iog.fillOntology(outputManager.getOWLDataFactory(), infOnt);
 // Save the inferred ontology.
 outputManager.saveOntology(infOnt,IRI.create((new File("inferredontologygo2.owl").toURI())));
 
+public class SimpleShortFormProvider1 implements ShortFormProvider, Serializable {
+
+    private final SimpleIRIShortFormProvider uriShortFormProvider = new SimpleIRIShortFormProvider();
+
+    @Override
+    public String getShortForm(OWLEntity entity) {
+        return '<'+entity.getIRI().toString()+'>';
+    }
+    public void dispose(){
+    	;
+    }
+}
+
 // Display Axioms
 	OWLObjectRenderer renderer =new ManchesterOWLSyntaxOWLObjectRendererImpl ();
+	renderer.setShortFormProvider(new SimpleShortFormProvider1());
 	int numaxiom1= infOnt.getAxiomCount();
 	Set<OWLClass> classes=infOnt.getClassesInSignature();
 	FileWriter fw= new FileWriter ("axiomsinf.lst",true); BufferedWriter bw =new BufferedWriter (fw); PrintWriter out =new PrintWriter (bw);
