@@ -65,12 +65,26 @@ iog.fillOntology(outputManager.getOWLDataFactory(), infOnt);
 // Save the inferred ontology.
 outputManager.saveOntology(infOnt,IRI.create((new File("inferredontologygo2.owl").toURI())));
 
+public class SimpleShortFormProvider1 implements ShortFormProvider, Serializable {
+
+    private final SimpleIRIShortFormProvider uriShortFormProvider = new SimpleIRIShortFormProvider();
+
+    @Override
+    public String getShortForm(OWLEntity entity) {
+        return '<'+entity.getIRI().toString()+'>';
+    }
+    public void dispose(){
+    	;
+    }
+}
+
 // Display Axioms
 	OWLObjectRenderer renderer =new ManchesterOWLSyntaxOWLObjectRendererImpl ();
+	renderer.setShortFormProvider(new SimpleShortFormProvider1());
 	int numaxiom1= infOnt.getAxiomCount();
 	Set<OWLClass> classes=infOnt.getClassesInSignature();
-	FileWriter fw= new FileWriter ("axiomsinf.lst",true); BufferedWriter bw =new BufferedWriter (fw); PrintWriter out =new PrintWriter (bw);
-	FileWriter fw1= new FileWriter ("classes.lst",true); BufferedWriter bw1 =new BufferedWriter (fw1); PrintWriter out1 =new PrintWriter (bw1);
+	FileWriter fw= new FileWriter ("axiomsinf.lst"); BufferedWriter bw =new BufferedWriter (fw); PrintWriter out =new PrintWriter (bw);
+	FileWriter fw1= new FileWriter ("classes.lst"); BufferedWriter bw1 =new BufferedWriter (fw1); PrintWriter out1 =new PrintWriter (bw1);
 	for (OWLClass class1 : classes)
 	{
 	   Set<OWLClassAxiom> ontoaxioms=infOnt.getAxioms (class1);
@@ -86,8 +100,7 @@ outputManager.saveOntology(infOnt,IRI.create((new File("inferredontologygo2.owl"
 //display original axioms
 	//int numaxiom1= Ont.getAxiomCount();
 	Set<OWLClass> classeso=ont.getClassesInSignature();
-	FileWriter fwo= new FileWriter ("axiomsorig.lst",true); BufferedWriter bwo =new BufferedWriter (fwo); PrintWriter outo =new PrintWriter (bwo);
-	//FileWriter fw1= new FileWriter ("classesgo.lst",true); BufferedWriter bw1 =new BufferedWriter (fw1); PrintWriter out1 =new PrintWriter (bw1);
+	FileWriter fwo= new FileWriter ("axiomsorig.lst"); BufferedWriter bwo =new BufferedWriter (fwo); PrintWriter outo =new PrintWriter (bwo);
 	for (OWLClass classo : classeso)
 	{
 	   Set<OWLClassAxiom> ontoaxioms=ont.getAxioms (classo);
