@@ -3,7 +3,7 @@
 OPA2Vec is a tool that can be used to produce feature vectors for biological entities from an ontology. OPA2Vec uses mainly metadata from the ontology in the form of annotation properties as the main source of data. It also uses formal ontology axioms as well as entity-concept associations as sources of information. 
 This document provides instructions on how to run OPA2Vec as a tool and contains also a detailed documentation of the implementation of OPA2Vec for users willing to change the code according to their needs which is quite easy.
 ## Pre-requisites
-OPA2Vec implementation uses Groovy with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html), Python and Perl. No other programs are required to run it.
+OPA2Vec implementation uses Groovy with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html), Python 2.7 and Perl. No other programs are required to run it.
 ## Running OPA2Vec
 - Create a new directory and name it OPA2Vec.
 - Download all the provided files from this repository to the OPA2Vec directory.
