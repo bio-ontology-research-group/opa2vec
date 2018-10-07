@@ -5,9 +5,11 @@ This document provides instructions on how to run OPA2Vec as a tool and contains
 
 ## Pre-requisites
 OPA2Vec implementation uses: 
- -Groovy (Groovy Version: 2.4.10 JVM: 1.8.0_121) with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html).
- -Python 2.7.5 with gensim.
- -Perl 5.16.3.
+ - Groovy (Groovy Version: 2.4.10 JVM: 1.8.0_121) with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html).
+ 
+ -  Python 2.7.5 with gensim.
+ 
+ - Perl 5.16.3.
 
 ## Running OPA2Vec
 - Create a new directory and name it OPA2Vec.
