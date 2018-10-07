@@ -2,14 +2,19 @@
 ## Introduction
 OPA2Vec is a tool that can be used to produce feature vectors for biological entities from an ontology. OPA2Vec uses mainly metadata from the ontology in the form of annotation properties as the main source of data. It also uses formal ontology axioms as well as entity-concept associations as sources of information. 
 This document provides instructions on how to run OPA2Vec as a tool and contains also a detailed documentation of the implementation of OPA2Vec for users willing to change the code according to their needs which is quite easy.
+
 ## Pre-requisites
-OPA2Vec implementation uses Groovy with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html), Python 2.7 and Perl. No other programs are required to run it.
+OPA2Vec implementation uses: 
+ -Groovy (Groovy Version: 2.4.10 JVM: 1.8.0_121) with Grape for dependency management (http://docs.groovy-lang.org/latest/html/documentation/grape.html).
+ -Python 2.7.5 with gensim.
+ -Perl 5.16.3.
+
 ## Running OPA2Vec
 - Create a new directory and name it OPA2Vec.
 - Download all the provided files from this repository to the OPA2Vec directory.
 - In the terminal, run 
 ```
-python runOPA2Vec.py "ontology file" "association file" -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename"
+python runOPA2Vec.py "ontology file" "association file" -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename" -reasoner "elk/hermit"
 ```
 where the following are mandatory arguments:
 
@@ -17,6 +22,7 @@ where the following are mandatory arguments:
   
  - **association file**         File containing entity class associations
   
+If one of these two mandatory input files is missing, anerror message will be displayed. 
 
 You can also specify the following optional arguments:
 
@@ -36,6 +42,10 @@ You can also specify the following optional arguments:
  
   - **-pretrained [pre-trained model]**
   Pre-trained word2vec model for background knowledge. If no pre-trained model is specified, the program will assume you have downloaded the default pre-trained model from http://bio2vec.net/data/pubmed_model/ (Please download all three files). The PMC trained model is also available in the same directory. Many of the word2vec parameters including the vector size are pre-defined in the pre-trained model and could not be changed. The vector size provided in our pre-defined model is 200, but you can provide your own pre-trained model with the vector size that you prefer. 
+  
+  -**-reasoner [reasoner]**
+  Preferred reasoner to use to reasone over ontology between either elk or hermit. Elk is the default reasoner used by the ontology.
+  
  
   
 In more detail:
@@ -47,6 +57,8 @@ In more detail:
 - **"-annotations"** is the optional parameter used to specify the list of the metada annotation properties (with their full URIs) you would like to use.E.g:<http://purl.obolibrary.org/obo/IAO_0000115>. You can also choose to use "all" annotation properties (default) or "none".
 - **"-entities file"** is the optional file containing the list of biological entities for which you would like to get the feature vectors (each entity in a separate line). If no file is specified the program will output vectors for all enitities and classes in the corpus.
 - **"-pretrained"** is the optional name of the pre-trained word2vec model. You can pre-train word2vec using the corpus of your choice (Wikipedia, PubMed, ...) and use it to run OPA2Vec by providing it as input. By default, our program uses a model pre-trained on PubMed. If you choose to use the default model, please download it from  http://bio2vec.net/data/pubmed_model/, otherwise the program will raise an error. You can also choose to train on the PMC model, also available under the same link. However, if you do please input the pmc model as input to the -pretrained model when running OPA2Vec.
+- **"-reasoner"** is the optional name of the preferred reasoner to use which could be either elk or hermit. By default elk is the reasoner used by OPA2Vec. Please note that due to its complexity, hermit fails to work on large ontologies such as Phenomenet. 
+
 ### Output
 The script should create a file *AllVectorResults.lst* (among other intermediate files) that contains vector representations for all classes specified in the "entities file" (or all classes if no file is provided). An example of what *AllVectorResults.lst* should look like is shown in *SampleVectors.lst*.
 
