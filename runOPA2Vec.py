@@ -100,7 +100,7 @@ print "***********Vector representations available at AllVectorResults.lst *****
 print "***********OPA2Vec Complete ...***********\n"
 
 #Let's cleanup a bit
-if (debug != 'yes' and debug != 'Yes' )
+if (debug != 'yes' and debug != 'Yes' ):
 	cleanup="rm axiom* AllAsso* allclasses.lst inferred* classes.lst finalclasses.lst metadata.lst ontology_corpus.lst annotclasses* associationAxiom*"
 	os.system(cleanup)
 
