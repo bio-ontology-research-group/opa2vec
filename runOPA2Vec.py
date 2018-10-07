@@ -31,7 +31,8 @@ parser.add_argument("-entities", nargs = '?', metavar = "entities file", type = 
 parser.add_argument("-annotations", nargs='?',metavar="metadata annotations", type = str, default="all", help = "Full URIs of annotation properties to be included in metadata -separated by a comma ,- use 'all' for all annotation properties (default) or 'none' for no annotation property ")
 parser.add_argument("-reasoner", nargs = '?', metavar = "reasoner", type = str,default='elk', 
                      help = "Preferred reasoner, hermit or elk")
-
+parser.add_argument("-debug", nargs = '?', metavar = "debug", type = str,default='no', 
+                     help = "yes/no, if set to yes, keeps intermediate files for debugging")
 # parse the arguments from standard input
 args = parser.parse_args()
  
@@ -56,7 +57,7 @@ model=args.model
 pretrained =args.pretrained
 listofuri=args.annotations
 reasoner=args.reasoner 
-
+debug =args.debug
 if (ontology_file is '' ):
 	print ("\nError:Mandatory ontology file missing. For help, run: python runOPA2Vec.py --help\n")
 	sys.exit()
@@ -99,9 +100,9 @@ print "***********Vector representations available at AllVectorResults.lst *****
 print "***********OPA2Vec Complete ...***********\n"
 
 #Let's cleanup a bit
-cleanup="rm axiom* AllAsso* allclasses.lst inferred* classes.lst finalclasses.lst metadata.lst ontology_corpus.lst annotclasses* associationAxiom*"
-
-os.system(cleanup)
+if (debug != 'yes' and debug != 'Yes' )
+	cleanup="rm axiom* AllAsso* allclasses.lst inferred* classes.lst finalclasses.lst metadata.lst ontology_corpus.lst annotclasses* associationAxiom*"
+	os.system(cleanup)
 
 
 
