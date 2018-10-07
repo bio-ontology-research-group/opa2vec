@@ -17,7 +17,7 @@ OPA2Vec implementation uses:
 - Download default pre-trained model from http://bio2vec.net/data/pubmed_model/ 
 - In the terminal, run 
 ```
-python runOPA2Vec.py "ontology file" "association file" -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename" -reasoner "elk/hermit"
+python runOPA2Vec.py "ontology file" "association file" -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename" -reasoner "elk/hermit" -debug "yes/no"
 ```
 
 where the following are mandatory arguments:
@@ -50,6 +50,8 @@ You can also specify the following optional arguments:
   - **-reasoner [reasoner]**
   Preferred reasoner to use to reasone over ontology between either elk or hermit. Elk is the default reasoner used by the ontology.
   
+  - **-debug [debug]
+  yes/no, if set to yes, keeps intermediate files for debugging. By default set to no, in which case no intermediate files are kept once the program exits.
  
   
 In more detail:
@@ -66,6 +68,8 @@ In more detail:
 - **"-pretrained"** is the optional name of the pre-trained word2vec model. You can pre-train word2vec using the corpus of your choice (Wikipedia, PubMed, ...) and use it to run OPA2Vec by providing it as input. By default, our program uses a model pre-trained on PubMed. If you choose to use the default model, please download it from  http://bio2vec.net/data/pubmed_model/, otherwise the program will raise an error. You can also choose to train on the PMC model, also available under the same link. However, if you do please input the pmc model as input to the -pretrained model when running OPA2Vec.
 
 - **"-reasoner"** is the optional name of the preferred reasoner to use which could be either elk or hermit. By default elk is the reasoner used by OPA2Vec. Please note that due to its complexity, hermit fails to work on large ontologies such as Phenomenet. 
+
+- **"-debug"** is a binary parameter (yes/no) that allows to choose whether to keep intermediate files for debugging. It is by default set to no, so unless this parameter is set to yes, all intermediate files will be removed and only the final output vectors file will be available. 
 
 ### Output
 The script should create a file *AllVectorResults.lst* (among other intermediate files) that contains vector representations for all classes specified in the "entities file" (or all classes if no file is provided). An example of what *AllVectorResults.lst* should look like is shown in *SampleVectors.lst*.
