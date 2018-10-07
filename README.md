@@ -46,7 +46,7 @@ You can also specify the following optional arguments:
   - **-pretrained [pre-trained model]**
   Pre-trained word2vec model for background knowledge. If no pre-trained model is specified, the program will assume you have downloaded the default pre-trained model from http://bio2vec.net/data/pubmed_model/ (Please download all three files). The PMC trained model is also available in the same directory. Many of the word2vec parameters including the vector size are pre-defined in the pre-trained model and could not be changed. The vector size provided in our pre-defined model is 200, but you can provide your own pre-trained model with the vector size that you prefer. 
   
-  -**-reasoner [reasoner]**
+  - **-reasoner [reasoner]**
   Preferred reasoner to use to reasone over ontology between either elk or hermit. Elk is the default reasoner used by the ontology.
   
  
