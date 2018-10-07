@@ -22,9 +22,9 @@ python runOPA2Vec.py "ontology file" "association file" -annotations "URI1,URI2"
 
 where the following are mandatory arguments:
 
- - **ontology file**            File containing ontology in owl format
+ - **ontology file**            File containing ontology in owl format.
   
- - **association file**         File containing entity class associations
+ - **association file**         File containing entity-class associations.
   
 If one of these two mandatory input files is missing, anerror message will be displayed. 
 
