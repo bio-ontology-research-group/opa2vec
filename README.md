@@ -26,7 +26,7 @@ where the following are mandatory arguments:
   
  - **association file**         File containing entity-class associations.
   
-If one of these two mandatory input files is missing, anerror message will be displayed. 
+If one of these two mandatory input files is missing, an error message will be displayed. 
 
 You can also specify the following optional arguments:
 
