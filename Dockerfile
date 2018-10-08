@@ -5,7 +5,7 @@ USER root
 WORKDIR /tmp
 
 RUN apt-get update && \
-  apt install -y python python-pip perl && \
+  apt-get install -y python python-pip perl && \
   pip install gensim
 
 COPY . .
