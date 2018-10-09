@@ -73,7 +73,8 @@ In more detail:
 
 ### Output
 The script should create a file *AllVectorResults.lst* (among other intermediate files) that contains vector representations for all classes specified in the "entities file" (or all classes if no file is provided). An example of what *AllVectorResults.lst* should look like is shown in *SampleVectors.lst*.
-
+## Docker
+A basic docker image of OPA2Vec is available at: https://hub.docker.com/r/kaustborg/opa2vec/
 ## Related work
 Please refer to the following  for related work:
 - Smaili, F. Z. et al. (2018). Onto2vec: joint vector-based representation of
