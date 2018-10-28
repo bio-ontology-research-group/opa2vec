@@ -75,6 +75,21 @@ In more detail:
 The script should create a file *AllVectorResults.lst* (among other intermediate files) that contains vector representations for all classes specified in the "entities file" (or all classes if no file is provided). An example of what *AllVectorResults.lst* should look like is shown in *SampleVectors.lst*.
 ## Docker
 A basic docker image of OPA2Vec is available at: https://hub.docker.com/r/kaustborg/opa2vec/
+To run OPA2Vec on a docker container, follow the instructions below:
+    Create a folder /$PATH/data (where /$PATH/data is the absolute path to the data/ folder on your host machine ) and store in it the following files:
+    -- ontology file named as "ontology.owl"
+    -- association file named as "myassociations"
+    Pull opa2vec image using :
+     ```
+       docker pull kaustborg/opa2vec
+      ```
+    Run image using the following command:
+```
+        docker run -v /$path/data:/opt/data kaustborg/opa2vec
+```
+    
+   Once the container finishes running, the vectors will be saved in the data/ folder on your host machine.
+
 ## Related work
 Please refer to the following  for related work:
 - Smaili, F. Z. et al. (2018). Onto2vec: joint vector-based representation of
