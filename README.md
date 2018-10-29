@@ -77,27 +77,20 @@ The script should create a file *AllVectorResults.lst* (among other intermediate
 A basic docker image of OPA2Vec is available at: https://hub.docker.com/r/kaustborg/opa2vec/
 
 To run OPA2Vec on a docker container, follow the instructions below:
-   
- - Create a folder /$PATH/data (where /$PATH/data is the absolute path to the data/ folder on your host machine ) and store in it the following files:
-   
-   -- ontology file named as "ontology.owl"
-    
-   -- association file named as "myassociations"
-    
-  - Pull opa2vec image using :  
-    
+
+ Create a folder /$PATH/data (where /$PATH/data is the absolute path to the data/ folder on your host machine ) and store in it your ontology file and association file.
+    Pull opa2vec image using :
 ```
-   docker pull kaustborg/opa2vec
+         docker pull kaustborg/opa2vec
 ```
-   
-   - Run image using the following command:
-   
-   
+   Run image using the following command:
 ```
-     docker run -v /$path/data:/opt/data kaustborg/opa2vec
+        docker run -v /$path/data:/opt/data kaustborg/opa2vec /opt/data/ontologyfile /opt/data/associationfile  -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename" -reasoner "elk/hermit" -debug "yes/no"
 ```
-    
-   Once the container finishes running, the vectors will be saved in the data/ folder on your host machine.
+
+where ontologyfile is the name of your ontology file and associationfile is the name of your association file. 
+
+-Once the container finishes running, the vectors will be saved in the data/ folder on your host machine.
 
 ## Related work
 Please refer to the following  for related work:
