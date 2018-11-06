@@ -101,7 +101,7 @@ if (prefreasoner.toLowerCase().equals("elk"))
 		  	 classess=renderer.render(class1);
 		    	 classaxiom=renderer.render (claxiom);
 		    	out1.println (classess);
-		    	out.println (classaxiom.replaceAll("\n"," "));
+		    	out.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll(")"," ").replaceAll("("," ");
 		    }
 		}
 
@@ -117,7 +117,7 @@ if (prefreasoner.toLowerCase().equals("elk"))
 		  	// classess=renderer.render(class1);
 		    	 classaxiom=renderer.render (claxiom);
 		    	//out1.println (classess);
-		    	outo.println (classaxiom.replaceAll("\n"," "));
+		    	outo.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll(")"," ").replaceAll("("," "));
 		    }
 		}
 }
@@ -143,7 +143,7 @@ else
 		  	 classess=renderer.render(class1);
 		    	 classaxiom=renderer.render (claxiom);
 		    	out1.println (classess);
-		    	out.println (classaxiom.replaceAll("\n"," "));
+		    	out.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll(")"," ").replaceAll("("," "));
 		    }
 		}
 	
