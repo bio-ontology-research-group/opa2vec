@@ -147,7 +147,7 @@ if (annotations[0].toLowerCase().equals("all"))
 					{
 						myproperty=prop.toString();
 						class11=cls.toString();
-						out.println((class11.replaceAll("\n", " ").replaceAll(","," ").replaceAll(")"," ").replaceAll("("," ")+ " "+ myproperty.replaceAll("\n", " ").replaceAll(","," ").replaceAll(")"," ").replaceAll("("," ")+" " + ((OWLLiteral) val).getLiteral()).replaceAll("\n"," "));
+						out.println((class11.replaceAll("\n", " ")+ " "+ myproperty.replaceAll("\n", " ")+" " + ((OWLLiteral) val).getLiteral()).replaceAll("\n"," "));
 
 				    	}
 				}
