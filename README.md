@@ -52,6 +52,9 @@ You can also specify the following optional arguments:
   
   - **-debug [debug]**
   yes/no, if set to yes, keeps intermediate files for debugging. By default set to no, in which case no intermediate files are kept once the program exits.
+
+  - **-gensim [gensim]**
+  yes/no. If set to yes, it will generate a cosine similarity matrix for the relevant entities. This will be stored in sim_matrix.lst.
  
   
 In more detail:
