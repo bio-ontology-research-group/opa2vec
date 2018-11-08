@@ -8,6 +8,7 @@ mysize= int(sys.argv[3])
 mincoun=int(sys.argv[4])
 model =str (sys.argv[5])
 pretrain=str (sys.argv[6])
+gensimf = str(sys.argv[7])
 
 #sentences =gensim.models.word2vec.LineSentence('pubmed_corpus.txt') # a memory-friendly iterator
 
@@ -26,12 +27,21 @@ mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.ite
 #print (len(mymodel.wv.vocab));
 # Store vectors for each given class
 word_vectors=mymodel.wv
+entities = []
 file= open ('AllVectorResults.lst', 'w')
 with open(myclasses) as f:
 	for line in f:
 		myclass1=line.rstrip()
+		entities.append(myclass1)
 		if myclass1 in word_vectors.vocab:		
 			#myvectors[myclass1]=mymodel[myclass1];
 			file.write (str(myclass1) + ' '+ str(mymodel[myclass1]) +'\n')
 	file.close()
 
+if gensimf == 'yes':
+	sim_file = open('sim_matrix.lst', 'w')
+	for word in entities:
+	  for word2 in entities:
+		  sim_file.write(str(word) + "," + str(word2) + "," + str(word_vectors.similarity(word, word2)) + "\n")
+	sim_file.close()
+  

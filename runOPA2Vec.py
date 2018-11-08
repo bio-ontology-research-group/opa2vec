@@ -33,6 +33,8 @@ parser.add_argument("-reasoner", nargs = '?', metavar = "reasoner", type = str,d
                      help = "Preferred reasoner, hermit or elk")
 parser.add_argument("-debug", nargs = '?', metavar = "debug", type = str,default='no', 
                      help = "yes/no, if set to yes, keeps intermediate files for debugging")
+parser.add_argument("-gensim", nargs = '?', type = str, default='no',
+                     help = "yes/no, if set to yes, generates similarity matrix for entities with word2vec.")
 # parse the arguments from standard input
 args = parser.parse_args()
  
@@ -58,6 +60,7 @@ pretrained =args.pretrained
 listofuri=args.annotations
 reasoner=args.reasoner 
 debug =args.debug
+gensim = args.gensim
 if (ontology_file is '' ):
 	print ("\nError:Mandatory ontology file missing. For help, run: python runOPA2Vec.py --help\n")
 	sys.exit()
@@ -94,7 +97,7 @@ commandFif="cat axioms.lst metadata.lst AllAssociations.lst  > ontology_corpus.l
 os.system(commandFif)
 print "***********Corpus Creation Complete ...***********\n"
 print "***********Running Word2Vec ...*********** \n"
-commandSix="python runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)
+commandSix="python2 runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)+" "+str(gensim)
 os.system(commandSix)
 print "***********Vector representations available at AllVectorResults.lst ***********\n"
 print "***********OPA2Vec Complete ...***********\n"
@@ -103,11 +106,3 @@ print "***********OPA2Vec Complete ...***********\n"
 if (debug != 'yes' and debug != 'Yes' ):
 	cleanup="rm axiom* AllAsso* allclasses.lst inferred* classes.lst finalclasses.lst metadata.lst ontology_corpus.lst annotclasses* associationAxiom*"
 	os.system(cleanup)
-
-
-
-
-
-
-
-
