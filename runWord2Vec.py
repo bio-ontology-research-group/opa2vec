@@ -41,8 +41,7 @@ with open(myclasses) as f:
 if gensimf == 'yes':
 	sim_file = open('sim_matrix.lst', 'w')
 	for word in entities:
-	  for item in word_vectors.most_similar([word]):
-		  if(item[0] in entities):
-			  sim_file.write(str(word) + "," + str(item[0]) + "," + str(item[1]) + "\n")
+	  for word2 in entities:
+		  sim_file.write(str(word) + "," + str(item[0]) + "," + str(word_vectors.similarity(word, word2)) + "\n")
 	sim_file.close()
   
