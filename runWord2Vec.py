@@ -8,7 +8,7 @@ mysize= int(sys.argv[3])
 mincoun=int(sys.argv[4])
 model =str (sys.argv[5])
 pretrain=str (sys.argv[6])
-
+outfile=str(sys.argv[7])
 #sentences =gensim.models.word2vec.LineSentence('pubmed_corpus.txt') # a memory-friendly iterator
 
 #print ("vocabulary is ready \n");
@@ -26,7 +26,7 @@ mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.ite
 #print (len(mymodel.wv.vocab));
 # Store vectors for each given class
 word_vectors=mymodel.wv
-file= open ('AllVectorResults.lst', 'w')
+file= open (outfile, 'w')
 with open(myclasses) as f:
 	for line in f:
 		myclass1=line.rstrip()
