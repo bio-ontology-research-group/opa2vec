@@ -6,7 +6,7 @@ my $path = `pwd`;
 my $annotfile=$ARGV[0];
 chomp ($path);
 #my $annotfile="$path/annotationAxiom.lst";
-my $ancestfile= "$path/axioms.lst";
+my $ancestfile= "$path/axiomsinf.lst";
 my $ontoclassesfile= "$path/classes.lst";
 my $addoutfile= "$path/associationAxiomInferred.lst";
 my @temparray=();

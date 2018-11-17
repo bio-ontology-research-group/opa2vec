@@ -72,7 +72,7 @@ print "***********Ontology Processing ...***********\n"
 commandF ="groovy ProcessOntology.groovy " + str(ontology_file) +" "+str(reasoner)
 os.system(commandF)
 print "***********Ontology Processing Complete ...***********\n"
-#Needed pre-processng ... just in case !
+#Needed pre-processing ... just in case !
 commandExtra1="perl getclasses.pl "+str(association_file)
 os.system(commandExtra1)
 commandMerge ="cat axiomsorig.lst axiomsinf.lst > axioms.lst"
@@ -94,7 +94,7 @@ commandFif="cat axioms.lst metadata.lst AllAssociations.lst  > ontology_corpus.l
 os.system(commandFif)
 print "***********Corpus Creation Complete ...***********\n"
 print "***********Running Word2Vec ...*********** \n"
-commandSix="python runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)
+commandSix="python2.7 runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)
 os.system(commandSix)
 print "***********Vector representations available at AllVectorResults.lst ***********\n"
 print "***********OPA2Vec Complete ...***********\n"
