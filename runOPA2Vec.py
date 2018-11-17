@@ -10,12 +10,12 @@ import sys
 parser = argparse.ArgumentParser(description = "OPA2Vec is a tool to produce feature vectors for biological entities from an ontology.")
  
 # add argument
-parser.add_argument("ontology", nargs = '?', metavar = "ontology file", type = str, 
-                     help = "File containing ontology in owl format",default='')
-parser.add_argument("association", nargs = '?', metavar = "association file", type = str, 
-                     help = "File containing entity class associations",default='')
-#parser.add_argument("entities", nargs = '?', metavar = "entities file", type = str, 
-             #        help = "File containing list of of biological entities for which you would like to get the feature vectors (each entity in a separate line)")
+parser.add_argument("-ontology", nargs = '?', metavar = "ontology OWL file", type = str, 
+                     help = "File containing ontology in OWL format",default='')
+parser.add_argument("-associations", nargs = '?', metavar = "association file", type = str, 
+                     help = "File containing entity-class associations",default='')
+parser.add_argument("-outfile", nargs = '?', metavar = "output file", type = str, 
+                     help = "Output file with ontology embeddings",default='')
 parser.add_argument("-embedsize", nargs = '?', metavar = "embedding size", type = int,default=200, 
                      help = "Size of obtained vectors")
 parser.add_argument("-windsize", nargs = '?', metavar = "window size", type = int,default=5, 
@@ -48,7 +48,7 @@ args = parser.parse_args()
 #print ("model ")+ str (args.model)
 
 ontology_file =args.ontology
-association_file=args.association
+association_file=args.associations
 classes_file=args.entities
 window=args.windsize
 embedding=args.embedsize
@@ -58,10 +58,14 @@ pretrained =args.pretrained
 listofuri=args.annotations
 reasoner=args.reasoner 
 debug =args.debug
+outfile =args.outfile
 if (ontology_file is '' ):
 	print ("\nError:Mandatory ontology file missing. For help, run: python runOPA2Vec.py --help\n")
 	sys.exit()
 if (association_file is ''):
+	print ("\nError:Mandatory association file missing. For help, run: python runOPA2Vec.py --help\n")
+	sys.exit()
+if (outfile is ''):
 	print ("\nError:Mandatory association file missing. For help, run: python runOPA2Vec.py --help\n")
 	sys.exit()
 
@@ -94,7 +98,7 @@ commandFif="cat axioms.lst metadata.lst AllAssociations.lst  > ontology_corpus.l
 os.system(commandFif)
 print "***********Corpus Creation Complete ...***********\n"
 print "***********Running Word2Vec ...*********** \n"
-commandSix="python2.7 runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)
+commandSix="python2.7 runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)+" "+str(outfile)
 os.system(commandSix)
 print "***********Vector representations available at AllVectorResults.lst ***********\n"
 print "***********OPA2Vec Complete ...***********\n"

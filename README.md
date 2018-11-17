@@ -25,7 +25,9 @@ where the following are mandatory arguments:
  - **ontology file**            File containing ontology in owl format.
   
  - **association file**         File containing entity-class associations.
-  
+
+ - **output file**              Output file with the ontology embeddings.
+
 If one of these two mandatory input files is missing, an error message will be displayed. 
 
 You can also specify the following optional arguments:
