@@ -17,7 +17,7 @@ OPA2Vec implementation uses:
 - Download default pre-trained model from http://bio2vec.net/data/pubmed_model/ 
 - In the terminal, run 
 ```
-python runOPA2Vec.py "ontology file" "association file" -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename" -reasoner "elk/hermit" -debug "yes/no"
+python runOPA2Vec.py "ontology file" "association file" "output file" -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename" -reasoner "elk/hermit" -debug "yes/no"
 ```
 
 where the following are mandatory arguments:
