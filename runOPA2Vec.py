@@ -66,7 +66,7 @@ if (association_file is ''):
 	print ("\nError:Mandatory association file missing. For help, run: python runOPA2Vec.py --help\n")
 	sys.exit()
 if (outfile is ''):
-	print ("\nError:Mandatory association file missing. For help, run: python runOPA2Vec.py --help\n")
+	print ("\nError:Mandatory output-file name missing. For help, run: python runOPA2Vec.py --help\n")
 	sys.exit()
 
 if (model != 'sg' and model != 'cbow'):
