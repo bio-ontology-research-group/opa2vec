@@ -5,7 +5,7 @@ import sys
 myclasses = str(sys.argv[1])
 mywindow= int(sys.argv[2])
 mysize= int(sys.argv[3])
-mincoun=int(sys.argv[4])
+mincount=int(sys.argv[4])
 model =str (sys.argv[5])
 pretrain=str (sys.argv[6])
 outfile=str(sys.argv[7])
@@ -19,10 +19,9 @@ outfile=str(sys.argv[7])
 #ssmodel.save("RepresentationModel_pubmed.txt");
 mymodel=gensim.models.Word2Vec.load (pretrain)
 sentences =gensim.models.word2vec.LineSentence('ontology_corpus.lst')
-mymodel.min_count = 0
 mymodel.build_vocab(sentences, update=True)
 #mymodel =gensim.models.Word2Vec(sentences,sg=0,min_count=0, size=200 ,window=5, sample=1e-3)
-mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.iter)
+mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.iter, min_count=mincount)
 #print (len(mymodel.wv.vocab));
 # Store vectors for each given class
 word_vectors=mymodel.wv
