@@ -62,6 +62,7 @@ In more detail:
 - **"association file"** is the path to the file containing the entity-concept associations (e.g. disease-phenotype associations).  
     + If more than one association file is needed, concatenate them into one file.
     + Ideally, the association file should contain two columns in each line: the entity (e.g. protein) and the full URI of the ontology class (e.g. GO function) it is annotated with separated by one space as shown in the file *SampleAssociationFile.lst*. 
+- **output file** file where the obtained vectors will be stored.
 ### Optional parameters
 - **"-annotations"** is the optional parameter used to specify the list of the metada annotation properties (with their full URIs) you would like to use.E.g:<http://purl.obolibrary.org/obo/IAO_0000115>. You can also choose to use "all" annotation properties (default) or "none".
 
@@ -74,7 +75,7 @@ In more detail:
 - **"-debug"** is a binary parameter (yes/no) that allows to choose whether to keep intermediate files for debugging. It is by default set to no, so unless this parameter is set to yes, all intermediate files will be removed and only the final output vectors file will be available. 
 
 ### Output
-The script should create a file *AllVectorResults.lst* (among other intermediate files) that contains vector representations for all classes specified in the "entities file" (or all classes if no file is provided). An example of what *AllVectorResults.lst* should look like is shown in *SampleVectors.lst*.
+The script should store the obtained vector representations in the specified output file for all classes given in the "entities file" (or all classes if no file is provided). An example of what the output file should look like is shown in *SampleVectors.lst*.
 ## Docker
 A basic docker image of OPA2Vec is available at: https://hub.docker.com/r/kaustborg/opa2vec/
 
