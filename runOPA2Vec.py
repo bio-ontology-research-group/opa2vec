@@ -20,7 +20,7 @@ parser.add_argument("-embedsize", nargs = '?', metavar = "embedding size", type 
                      help = "Size of obtained vectors")
 parser.add_argument("-windsize", nargs = '?', metavar = "window size", type = int,default=5, 
                      help = "Window size for word2vec model")
-parser.add_argument("-mincount", nargs = '?', metavar = "min count", type = int,default=25, 
+parser.add_argument("-mincount", nargs = '?', metavar = "min count", type = int,default=0, 
                      help = "Minimum count value for word2vec model") 
 parser.add_argument("-model", nargs = '?', metavar = "model", type = str,default='sg', 
                      help = "Preferred word2vec architecture, sg or cbow") 
