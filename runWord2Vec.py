@@ -18,9 +18,9 @@ outfile=str(sys.argv[7])
 #	ssmodel =gensim.models.Word2Vec(sentences,sg=0,min_count=mincoun, #size=mysize ,window=mywindow)
 #ssmodel.save("RepresentationModel_pubmed.txt");
 mymodel=gensim.models.Word2Vec.load (pretrain)
+mymodel.min_count = mincount
 sentences =gensim.models.word2vec.LineSentence('ontology_corpus.lst')
 mymodel.build_vocab(sentences, update=True)
-mymodel.min_count = mincount
 #mymodel =gensim.models.Word2Vec(sentences,sg=0,min_count=0, size=200 ,window=5, sample=1e-3)
 mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.iter)
 #print (len(mymodel.wv.vocab));
