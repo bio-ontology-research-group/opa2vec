@@ -138,7 +138,7 @@ if (prefreasoner.toLowerCase().equals("elk"))
 	    classess=renderer.render(class1);
 	    classaxiom=renderer.render (claxiom);
 	    out1.println (classess);
-	    out.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll(")"," ").replaceAll("("," "));
+	    out.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll("\\)"," ").replaceAll("\\("," "));
 	}
     }
     
