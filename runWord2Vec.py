@@ -21,10 +21,13 @@ mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.ite
 # Store vectors for each given class
 word_vectors=mymodel.wv
 file= open (outfile, 'w')
+done = set()
 with open(myclasses) as f:
 	for line in f:
 		myclass1=line.rstrip()
-		if myclass1 in word_vectors.vocab:		
-			file.write (str(myclass1) + ' '+ str(mymodel[myclass1]) +'\n')
-	file.close()
+                if myclass1 not in done:
+		        if myclass1 in word_vectors.vocab:
+			        file.write (str(myclass1) + ' '+ str(mymodel[myclass1]) +'\n')
+                                done.add(myclass1)
+file.close()
 
