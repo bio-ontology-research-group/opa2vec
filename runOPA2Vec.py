@@ -106,11 +106,3 @@ print "***********OPA2Vec Complete ...***********\n"
 if (debug != 'yes' and debug != 'Yes' ):
 	cleanup="rm axiom* AllAsso* allclasses.lst inferred* classes.lst finalclasses.lst metadata.lst ontology_corpus.lst annotclasses* associationAxiom*"
 	os.system(cleanup)
-
-
-
-
-
-
-
-
