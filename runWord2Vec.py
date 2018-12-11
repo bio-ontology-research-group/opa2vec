@@ -30,7 +30,7 @@ with open(myclasses) as f:
                 if myclass1 not in done:
                         if myclass1 in word_vectors.vocab:
                                 embeddings = ','.join(mymodel[myclass1].astype('str'))
-			        file.write (str(myclass1) + '\t' + embeddings + '\n')
+                                file.write (str(myclass1) + '\t' + embeddings + '\n')
                                 done.add(myclass1)
 file.close()
 
