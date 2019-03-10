@@ -99,6 +99,7 @@ if (prefreasoner.toLowerCase().equals("elk"))
 	    classaxiom=renderer.render (claxiom);
 	    out1.println (classess);
 	    out.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll("\\)"," ").replaceAll("\\("," "));
+	    out.flush()
 	}
     }
 
@@ -117,6 +118,9 @@ if (prefreasoner.toLowerCase().equals("elk"))
 	    outo.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll("\\)"," ").replaceAll("\\("," "));
 	}
     }
+    out.flush()
+    out1.flush()
+    outo.flush()
 } else {
     OWLReasonerFactory reasonerFactory = new Reasoner.ReasonerFactory();
     OWLReasoner reasoner =reasonerFactory.createReasoner(ont);
@@ -138,7 +142,7 @@ if (prefreasoner.toLowerCase().equals("elk"))
 	    classess=renderer.render(class1);
 	    classaxiom=renderer.render (claxiom);
 	    out1.println (classess);
-	    out.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll("\\)"," ").replaceAll("\\("," "));
+	    out.println (classaxiom.replaceAll("\n"," ").replaceAll(","," ").replaceAll(")"," ").replaceAll("("," "));
 	}
     }
     
@@ -146,4 +150,6 @@ if (prefreasoner.toLowerCase().equals("elk"))
     outo.println(" ");
     outo.flush()
     outo.close()
+    out.flush()
+    out1.flush()
 }
