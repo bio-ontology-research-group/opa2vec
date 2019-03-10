@@ -6,7 +6,7 @@ my $path = `pwd`;
 my $annotfile=$ARGV[0];
 chomp ($path);
 #my $annotfile="$path/annotationAxiom.lst";
-my $ancestfile= "$path/axiomsinf.lst";
+my $ancestfile= "$path/axioms.lst";
 my $ontoclassesfile= "$path/classes.lst";
 my $addoutfile= "$path/associationAxiomInferred.lst";
 my @temparray=();
@@ -17,7 +17,7 @@ my %supermap=();
 open (FILEANC, $ancestfile);
 while (my $lineanc=<FILEANC>)
 {
-	if ($lineanc=~/(\S+)\s+\S+\s+(\S+)/)
+	if (($lineanc=~/(\S+)\s+SubClassOf\s+(.*)/) || ($lineanc=~/(\S+)\s+EquivalentTo\s+(.*)/))
 	{
 		my $child=$1;
 		my $ances=$2;
@@ -44,7 +44,3 @@ while (my $lineassoc=<FH>)
 		}	
 	}	
 }
-
-  
-
-
