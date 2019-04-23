@@ -18,7 +18,7 @@ sentences = gensim.models.word2vec.LineSentence('ontology_corpus.lst')
 mymodel.min_count = 0
 mymodel.workers = workers
 mymodel.build_vocab(sentences, update=True)
-mymodel.train(sentences, total_examples=mymodel.corpus_count, epochs=mymodel.iter)
+mymodel.train(sentences, total_examples=mymodel.corpus_count, epochs=100)
 
 # Store vectors for each given class
 word_vectors = mymodel.wv
