@@ -96,7 +96,7 @@ where ontologyfile is the name of your ontology file and associationfile is the 
 -Once the container finishes running, the vectors will be saved in the data/ folder on your host machine.
 
 ## Reference
-If you find out work useful, please cite:
+If you find our work useful, please cite:
 
 OPA2Vec: combining formal and informal content of biomedical ontologies to improve similarity-based prediction. Fatima Zohra Smaili, Xin Gao, Robert Hoehndorf. Bioinformatics, 2018. https://doi.org/10.1093/bioinformatics/bty933
 
