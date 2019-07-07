@@ -26,7 +26,7 @@ where the following are mandatory arguments:
   
  - **association file**         File containing entity-class associations.
 
- - **output file**              Output file with the ontology embeddings.
+ - **output file**              Output file where embeddings will be stored.
 
 If one of these two mandatory input files is missing, an error message will be displayed. 
 
