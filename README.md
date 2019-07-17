@@ -51,9 +51,9 @@ You can also specify the following optional arguments:
   
   - **-reasoner [reasoner]**
   Preferred reasoner to be used to reason over ontology between either elk or hermit. Elk is the default reasoner used by the ontology.
-  
-  - **-debug [debug]**
-  yes/no, if set to yes, keeps intermediate files for debugging. By default set to no, in which case no intermediate files are kept once the program exits.
+   
+  - **-annotate_metadata [annotate_metadata]**
+  yes/no, if set to yes, annotates occurring labels/synonyms of an ontology term in the ontology meta-data descriptions with the corresponding ontology IDs.
  
   
 In more detail:
@@ -72,28 +72,11 @@ In more detail:
 
 - **"-reasoner"** is the optional name of the preferred reasoner to use which could be either elk or hermit. By default elk is the reasoner used by OPA2Vec. Please note that due to its complexity, hermit fails to work on large ontologies such as Phenomenet. 
 
-- **"-debug"** is a binary parameter (yes/no) that allows to choose whether to keep intermediate files for debugging. It is by default set to no, so unless this parameter is set to yes, all intermediate files will be removed and only the final output vectors file will be available. 
+
 
 ### Output
 The script should store the obtained vector representations in the specified output file for all classes given in the "entities file" (or all classes if no file is provided). An example of what the output file should look like is shown in *SampleVectors.lst*.
-## Docker
-A basic docker image of OPA2Vec is available at: https://hub.docker.com/r/kaustborg/opa2vec/
 
-To run OPA2Vec on a docker container, follow the instructions below:
-
- Create a folder /$PATH/data (where /$PATH/data is the absolute path to the data/ folder on your host machine ) and store in it your ontology file and association file.
-    Pull opa2vec image using :
-```
-         docker pull kaustborg/opa2vec
-```
-   Run image using the following command:
-```
-        docker run -v /$path/data:/opt/data kaustborg/opa2vec /opt/data/ontologyfile /opt/data/associationfile  -annotations "URI1,URI2" -pretrained "filename" -embedsize N -windsize N -mincount N -model sg/cbow  -entities "filename" -reasoner "elk/hermit" -debug "yes/no"
-```
-
-where ontologyfile is the name of your ontology file and associationfile is the name of your association file. 
-
--Once the container finishes running, the vectors will be saved in the data/ folder on your host machine.
 
 ## Reference
 If you find our work useful, please cite:
