@@ -52,8 +52,8 @@ You can also specify the following optional arguments:
   - **-reasoner [reasoner]**
   Preferred reasoner to be used to reason over ontology between either elk or hermit. Elk is the default reasoner used by the ontology.
   
-  - **-debug [debug]**
-  yes/no, if set to yes, keeps intermediate files for debugging. By default set to no, in which case no intermediate files are kept once the program exits.
+  - **-annotate_metadata [annotate_metadata]**
+  yes/no, if set to yes, annotates occurring labels/synonyms of an ontology term in the ontology meta-data descriptions with the corresponding ontology IDs.
  
   
 In more detail:
