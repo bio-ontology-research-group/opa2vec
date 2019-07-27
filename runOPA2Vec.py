@@ -98,7 +98,7 @@ commandFif="cat axioms.lst metadata.lst AllAssociations.lst  > ontology_corpus.l
 os.system(commandFif)
 print "***********Corpus Creation Complete ...***********\n"
 print "***********Running Word2Vec ...*********** \n"
-commandSix="python2.7 runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)+" "+str(outfile)
+commandSix="python runWord2Vec.py "+str(classes_file)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)+" "+str(outfile)
 os.system(commandSix)
 print "***********Vector representations available at AllVectorResults.lst ***********\n"
 print "***********OPA2Vec Complete ...***********\n"
