@@ -5,7 +5,7 @@ import sys
 myclasses = str(sys.argv[1])
 mywindow= int(sys.argv[2])
 mysize= int(sys.argv[3])
-mincount=int(sys.argv[4])
+mincoun=int(sys.argv[4])
 model =str (sys.argv[5])
 pretrain=str (sys.argv[6])
 outfile=str(sys.argv[7])
@@ -18,20 +18,21 @@ outfile=str(sys.argv[7])
 #	ssmodel =gensim.models.Word2Vec(sentences,sg=0,min_count=mincoun, #size=mysize ,window=mywindow)
 #ssmodel.save("RepresentationModel_pubmed.txt");
 mymodel=gensim.models.Word2Vec.load (pretrain)
-mymodel.min_count = mincount
 sentences =gensim.models.word2vec.LineSentence('ontology_corpus.lst')
+mymodel.min_count = 0
 mymodel.build_vocab(sentences, update=True)
 #mymodel =gensim.models.Word2Vec(sentences,sg=0,min_count=0, size=200 ,window=5, sample=1e-3)
-mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=100)
+mymodel.train (sentences,total_examples=mymodel.corpus_count, epochs=mymodel.iter)
 #print (len(mymodel.wv.vocab));
 # Store vectors for each given class
 word_vectors=mymodel.wv
-file= open (outfile, 'w')
-with open(myclasses) as f:
-	for line in f:
-		myclass1=line.rstrip()
-		if myclass1 in word_vectors.vocab:		
-			#myvectors[myclass1]=mymodel[myclass1];
-			file.write (str(myclass1) + ' '+ str(mymodel[myclass1]) +'\n')
-	file.close()
+word_vectors.save_word2vec_format (outfile)
+#file= open (outfile, 'w')
+#with open(myclasses) as f:
+#	for line in f:
+#		myclass1=line.rstrip()
+#		if myclass1 in word_vectors.vocab:		
+#			#myvectors[myclass1]=mymodel[myclass1];
+#			file.write (str(myclass1) + ' '+ str(mymodel[myclass1]) +'\n')
+#	file.close()
 
