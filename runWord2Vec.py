@@ -12,7 +12,13 @@ pretrain = str(sys.argv[6])
 outfile = str(sys.argv[7])
 
 workers = 8
+#sentences =gensim.models.word2vec.LineSentence('ontology_corpus.lst') # a memory-friendly iterator
 
+#print ("vocabulary is ready \n");
+#if (model =="sg"):
+	#ssmodel =gensim.models.Word2Vec(sentences,sg=1,min_count=mincoun, #size=mysize ,window=mywindow, sample=1e-3)
+#else:
+#	ssmodel =gensim.models.W
 mymodel = gensim.models.Word2Vec.load(pretrain)
 sentences = gensim.models.word2vec.LineSentence('ontology_corpus.lst')
 mymodel.min_count = 0
