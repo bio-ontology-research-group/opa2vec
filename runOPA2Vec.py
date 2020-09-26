@@ -132,7 +132,7 @@ tempoutfile ="tempout"
 print ("\n		5.Running Word2Vec ... \n")
 cmdwv="python runWord2Vec.py "+str(finalclasses.name)+" "+str(window)+" "+str(embedding)+" "+str(mincoun)+" "+str(model)+" "+str(pretrained)+" "+ str(ontology_corpus.name)+" "+ str(tempvecs.name)
 os.system(cmdwv)
-print "		*********** Vector representations created ***********\n"
+print ("		*********** Vector representations created ***********\n")
 
 #6. Process vectors
 cmdproc="python process_vectors.py " + str(tempvecs.name)+" > "+ str(outfile)
